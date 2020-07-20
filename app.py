@@ -29,7 +29,7 @@ def predict():
     corr_movie.dropna(inplace=True)
     corr_movie = corr_movie.join(ratings['number_of_ratings'])
     corr = corr_movie[corr_movie['number_of_ratings']>100].sort_values('Correlation',ascending = False).head(5)
-    print(corr)
+   
 
     return render_template('index.html',output = corr)
 
