@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html >
-<!--From https://codepen.io/frytyler/pen/EGdtg-->
+
 <head>
-  <meta charset="UTF-8">
-  <title>ML API</title>
-  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
   
 </head>
 
 <body>
- <div class="login">
-	<h1>Predict Movies</h1>
-
+  <center>
+ <div class="container">
+  <tr>
+    <td>
+	<h1>Predict Movie</h1>
+    </td>
+  </tr>
      <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
-		<input type="text" name="movie" placeholder="Movie name" required="required" />
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    <tr><td><form action="{{ url_for('predict')}}"method="post" style="border:1px solid #ccc"></td>
+		<td><input type="text" name="movie" placeholder="Movie name" required="required" /></td>
+        <td><button type="submit" class="signupbtn">Predict</button></td>
     </form>
-
+  </tr>
    <br>
    <br>
-   <pre>{{output}}</pre>
-  
-
+   <!--{{prediction_text}}-->
+ 
+<!--{% for i in data %}
+<tr>
+<td>{{ i.title }}</td>>
+</tr>
+{% endfor %}-->
+<pre>{{output}}</pre>
 
  </div>
 
-
+</center>
 </body>
 </html>
